@@ -1,9 +1,16 @@
-function App() {
-  return (
-    <div >
-      <h1 className="p-4 border">chao</h1>
-    </div>
 
+import { BrowserRouter, Routes } from "react-router-dom";
+import {renderRoutes,  routes } from "./routes";
+import './App.css'
+
+function App() {
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        {renderRoutes(routes)}
+      </Routes>
+    </BrowserRouter>
   )
 }
 
