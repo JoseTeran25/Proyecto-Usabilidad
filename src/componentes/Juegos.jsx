@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IconSiguiente from './Iconos/IconSiguiente';
 import IconAnterior from './Iconos/IconAnterior';
 import { useNavigate } from 'react-router-dom';
-import { PATH_FUERZA, PATH_MOVIMIENTO_CIRCULAR_UNIFORME, PATH_MOVIMIENTO_RECTILINEO_UNIFORME} from "../routes/path";
+import { PATH_FUERZA, PATH_MOVIMIENTO_CIRCULAR_UNIFORME, PATH_MOVIMIENTO_RECTILINEO_UNIFORME } from "../routes/path";
 
 function Juegos() {
   const [indice, setIndice] = useState(0);
@@ -35,7 +35,7 @@ function Juegos() {
   };
 
   const irJuega = () => {
-    navigate(opciones[indice].ruta);
+    navigate(opciones[indice].ruta, { state: { nombreJuego: opciones[indice].nombre } })
   }
 
   return (
@@ -75,7 +75,7 @@ function Juegos() {
         />
       </div>
 
-      <button 
+      <button
         className="bg-[#28A745] py-2 px-5 rounded-xl mt-10 text-3xl text-white font-bold"
         onClick={irJuega}
       >Jugar</button>

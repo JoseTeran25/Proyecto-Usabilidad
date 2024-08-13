@@ -3,7 +3,7 @@ import IconVidaLlena from "./Iconos/IconVidaLlena"
 
 function NavBar({ nombreJuego, score }) {
   return (
-    <nav className='rounded-xl bg-[#D9D9D9] top-0 w-[80%] h-[70px] relative my-5 opacity-70 flex items-center justify-between px-4'>
+    <nav className='rounded-xl bg-[#D9D9D9] absolute top-0 my-5 w-[80%] h-[70px]  opacity-70 flex items-center justify-between px-4'>
       <div className="flex items-center justify-center bg-[#FFDD33] rounded-full p-3">
         <IconHome width={28} height={28} className='cursor-pointer' />
       </div>
