@@ -1,4 +1,4 @@
-import { PATH_HOME} from "./path";
+import { PATH_HOME, PATH_FUERZA} from "./path";
 import { Route, Outlet } from "react-router-dom";
 import { lazy, Fragment, Suspense } from 'react'
 
@@ -33,6 +33,10 @@ export const routes = [
         path: PATH_HOME,
         element: lazy(async () => await import("../pages/Home"))
       },
+      {
+        path: PATH_FUERZA,
+        element: lazy(async () => await import("../pages/Fuerza"))
+      }
       
     ]
   }
