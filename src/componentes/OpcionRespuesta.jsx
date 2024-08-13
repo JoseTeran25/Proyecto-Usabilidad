@@ -1,10 +1,10 @@
 
-function OpcionRespuesta({ opcion, descripcion, esCorrecta }) {
+function OpcionRespuesta({ opcion, descripcion, esCorrecta, onClick, color }) {
 
   const colorCorrecta = {esCorrecta} ? "bg-[#FFDD33]" : "bg-[#28A745]";
 
   return (
-    <div className="bg-[#28A745] rounded-md font-aldrich text-white w-[300px] h-[50px] flex items-center justify-around text-xl m-3 shadow-normal cursor-pointer">
+    <div className={`${color} rounded-md font-aldrich text-white w-[300px] h-[50px] flex items-center justify-around text-xl m-3 shadow-normal cursor-pointer`} onClick={onClick}>
       <p>{opcion}</p>
       <p>{descripcion}</p>
     </div>

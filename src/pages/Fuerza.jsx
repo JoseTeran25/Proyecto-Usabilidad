@@ -13,9 +13,15 @@ function Fuerza() {
   const location = useLocation();
   const { nombreJuego } = location.state || {}
   const [nivelActual, setNivelActual] = useState(0);
+  const [respuestaCorrecta, setRespuestaCorrecta] = useState(null);
 
   const handleClicNivel = (nivel) => {
-    setNivelActual(nivel);
+    setNivelActual(nivel)
+    setRespuestaCorrecta(null)
+  }
+
+  const handleRespuesta = (esCorrecta) => {
+    setRespuestaCorrecta(esCorrecta)
   }
 
   return (
@@ -41,17 +47,49 @@ function Fuerza() {
             <IconRegresar width={20} height={20} className="cursor-pointer" color="black" />
           </div>
 
-          <div className="relative z-10 text-center mx-20 mt-14 font-aldrich">
-            <p className="text-5xl font-bold mb-4">NIVEL 1</p>
-            <p className="text-3xl text-left">
-              Agent 47 debe mover un bloque de 10 kg sobre una superficie sin fricción.
-              Aplicará una fuerza de 50 N sobre el bloque. ¿Cuál debe ser la aceleración
-              del bloque para que Agent 47 complete su misión?
-            </p>
-            <div className="border flex flex-col items-end mt-10">
-              <OpcionRespuesta opcion="A" descripcion="a = 5m/s²" esCorrecta={true} />
-              <OpcionRespuesta opcion="B" descripcion="a = 6m/s²" esCorrecta={false} />
-            </div>
+          <div className="relative z-10 mx-20 mt-14 font-aldrich flex flex-col items-center">
+            {respuestaCorrecta === null && (
+              <>
+                <p className="text-5xl font-bold mb-4">NIVEL 1</p>
+                <p className="text-3xl text-left">
+                  Agent 47 debe mover un bloque de 10 kg sobre una superficie sin fricción.
+                  Aplicará una fuerza de 50 N sobre el bloque. ¿Cuál debe ser la aceleración
+                  del bloque para que Agent 47 complete su misión?
+                </p>
+                <div className="flex flex-col items-end mt-10 w-full">
+                  <OpcionRespuesta opcion="A" descripcion="a = 5m/s²" color="bg-[#28A745]" esCorrecta={true} onClick={() => handleRespuesta(true)} />
+                  <OpcionRespuesta opcion="B" descripcion="a = 6m/s²"  color="bg-[#28A745]" esCorrecta={false} onClick={() => handleRespuesta(false)} />
+                </div>
+              </>
+            )}
+            {respuestaCorrecta === true && (
+              <>
+                <p className="text-5xl font-bold mb-4">NIVEL 1</p>
+                <OpcionRespuesta opcion="A" descripcion="a = 5m/s²" color="bg-[#28A745]" />
+                <div className="rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl ">
+                  ¡Bien! Lograste una aceleración de 5 m/s². La Segunda Ley de Newton lo explica:
+                  Fuerza neta = 50 N Masa = 10 kg Entonces, aceleración = 50 N / 10 kg = 5 m/s².
+                  ¡Misión cumplida!
+                </div>
+                <button className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5" onClick={() => handleClicNivel(0)}>
+                  Siguiente
+                </button>
+              </>
+            )}
+            {respuestaCorrecta === false && (
+              <>
+                <p className="text-5xl font-bold mb-4">NIVEL 1</p>
+                <OpcionRespuesta opcion="B" descripcion="a = 6m/s²" color="bg-[#CA0303]" />
+                <div className="rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl ">
+                  Incorrecto, Agent 47. Con una fuerza de 50 N sobre un bloque de 10 kg sin fricción, la aceleración correcta según la Segunda Ley de Newton es:
+                  Fuerza neta = masa x aceleración 50 N = 10 kg x aceleración Aceleración = 5 m/s²
+                  Por favor, inténtalo de nuevo para completar la misión.
+                </div>
+                <button className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5" onClick={() => handleRespuesta(null)}>
+                  Volver a intentar
+                </button>
+              </>
+            )}
           </div>
         </div>
 
