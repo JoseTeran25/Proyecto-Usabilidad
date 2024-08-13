@@ -6,18 +6,25 @@ function Fuerza() {
 
   const location = useLocation();
   const { nombreJuego } = location.state || {}
-  const [niveles, setNiveles] = useState(true);
-  const [nivel1, setNivel1] = useState(false);
+  const [nivelActual, setNivelActual] = useState(0);
 
+  const handleClicNivel = (nivel) => {
+    setNivelActual(nivel);
+  }
 
   return (
     <div>
-      {niveles && (
-        <Niveles nombreJuego={nombreJuego} />
+      {nivelActual === 0 && (
+        <Niveles nombreJuego={nombreJuego} onClick={handleClicNivel} />
       )}
-      {nivel1 && (
+      {nivelActual === 1 && (
         <div>
-
+          Hola
+        </div>
+      )}
+      {nivelActual === 2 && (
+        <div>
+          Hola 2
         </div>
       )}
     </div>

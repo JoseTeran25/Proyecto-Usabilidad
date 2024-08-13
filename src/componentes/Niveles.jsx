@@ -5,7 +5,7 @@ import PersonajeDracula from "../assets/personaje-dracula.png";
 import NavBar from '../componentes/NavBar';
 import BotonNivel from '../componentes/BotonNivel';
 
-function Niveles({ nombreJuego }) {
+function Niveles({ nombreJuego, onClick }) {
   return (
     <div className='relative w-full h-screen flex items-center justify-center'>
       <img src={FondoNiveles} alt="Fondo Niveles" className="absolute top-0 left-0 w-full h-full object-cover" />
@@ -17,11 +17,11 @@ function Niveles({ nombreJuego }) {
       <img src={PersonajeDracula} alt="Dracula" className="w-[100px] h-[100px] absolute bottom-[50vh] left-[18vw] z-20" />
       <img src={PersonajeDracula} alt="Dracula" className="w-[100px] h-[100px] absolute bottom-[40vh] right-[10vw] z-20" />
 
-      <BotonNivel nivel={'1'} posicion="bottom-[15vh] left-[30vw]" />
-      <BotonNivel nivel={'2'} posicion="bottom-[55vh] left-[35vw]" />
-      <BotonNivel nivel={'3'} posicion="bottom-[35vh] right-[45vw]" />
-      <BotonNivel nivel={'4'} posicion="bottom-[35vh] right-[25vw]" />
-      <BotonNivel nivel={'5'} posicion="bottom-[65vh] right-[10vw]" />
+      <BotonNivel nivel={'1'} posicion="bottom-[15vh] left-[30vw]" onClick={() => onClick(1)} />
+      <BotonNivel nivel={'2'} posicion="bottom-[55vh] left-[35vw]" onClick={() => onClick(2)}/>
+      <BotonNivel nivel={'3'} posicion="bottom-[35vh] right-[45vw]" onClick={() => onClick(3)} />
+      <BotonNivel nivel={'4'} posicion="bottom-[35vh] right-[25vw]" onClick={() => onClick(4)}/>
+      <BotonNivel nivel={'5'} posicion="bottom-[65vh] right-[10vw]" onClick={() => onClick(5)}/>
     </div>
   )
 }

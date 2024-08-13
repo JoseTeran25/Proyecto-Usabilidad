@@ -1,6 +1,6 @@
 import IconStar from "./Iconos/IconStar";
 
-function BotonNivel({ nivel, posicion }) {
+function BotonNivel({ nivel, posicion, onClick }) {
   return (
     <div className={`absolute ${posicion}`}>
 
@@ -25,7 +25,7 @@ function BotonNivel({ nivel, posicion }) {
         className="absolute top-[-10px] right-[5%] transform translate-y-[-50%]"
       />
 
-      <button className="w-[80px] h-[80px] rounded-full bg-[#D9D9D9] relative font-sans text-3xl font-extrabold shadow-2xl">
+      <button className="w-[80px] h-[80px] rounded-full bg-[#D9D9D9] relative font-sans text-3xl font-extrabold shadow-2xl" onClick={onClick}>
         {nivel}
       </button>
     </div>
