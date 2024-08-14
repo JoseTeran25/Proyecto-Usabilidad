@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import IconSiguiente from './Iconos/IconSiguiente';
 import IconAnterior from './Iconos/IconAnterior';
 import { useNavigate } from 'react-router-dom';
+import MRU from "../assets/mru.jpeg";
+import MCU from "../assets/mcu.jpeg";
+import FUERZA from "../assets/fuerza.jpeg";
 import { PATH_FUERZA, PATH_MOVIMIENTO_CIRCULAR_UNIFORME, PATH_MOVIMIENTO_RECTILINEO_UNIFORME } from "../routes/path";
 
 function Juegos() {
@@ -10,17 +13,17 @@ function Juegos() {
 
   const opciones = [
     {
-      imagen: './src/assets/mru.jpeg',
+      imagen: MRU,
       nombre: 'Movimiento Rectilíneo Uniforme',
       ruta: PATH_MOVIMIENTO_RECTILINEO_UNIFORME,
     },
     {
-      imagen: './src/assets/mcu.jpeg',
+      imagen: MCU,
       nombre: 'Movimiento Circular Uniforme',
       ruta: PATH_MOVIMIENTO_CIRCULAR_UNIFORME,
     },
     {
-      imagen: './src/assets/fuerza.jpeg',
+      imagen: FUERZA,
       nombre: 'Fuerza',
       ruta: PATH_FUERZA,
     },
