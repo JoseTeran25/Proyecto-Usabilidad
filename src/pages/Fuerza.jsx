@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import Niveles from "../componentes/Niveles";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Fondo from "../assets/Fondo.jpeg";
 import IconRegresar from "../componentes/Iconos/IconRegresar";
@@ -7,12 +7,14 @@ import FondoPasto3 from "../assets/Fondo-Pasto3.png";
 import PersonajeRojo from "../assets/personjae-rojo.png";
 import Bloque from "../assets/bloque.png";
 import OpcionRespuesta from "../componentes/OpcionRespuesta";
+import ConfirmacionPopup from "../componentes/ConfirmacionPopup";
 
 function Fuerza() {
   const location = useLocation();
   const { nombreJuego } = location.state || {};
   const [nivelActual, setNivelActual] = useState(0);
   const [respuestaCorrecta, setRespuestaCorrecta] = useState(null);
+  const [mostrarPopup, setMostrarPopup] = useState(false);
 
   const handleClicNivel = (nivel) => {
     setNivelActual(nivel);
@@ -21,6 +23,19 @@ function Fuerza() {
 
   const handleRespuesta = (esCorrecta) => {
     setRespuestaCorrecta(esCorrecta);
+  };
+
+  const handleRegresar = () => {
+    setMostrarPopup(true);
+  };
+
+  const confirmarRegreso = () => {
+    setMostrarPopup(false);
+    handleClicNivel(0); // Regresar a niveles
+  };
+
+  const cancelarRegreso = () => {
+    setMostrarPopup(false);
   };
 
   return (
@@ -43,19 +58,19 @@ function Fuerza() {
           <img
             src={PersonajeRojo}
             alt="Personaje rojo en la escena"
-            className="w-[100px] h-[150px] absolute bottom-[23vh] left-[15vw] z-20"
+            className="w-[100px] h-[150px] absolute bottom-[23vh] left-[15vw] z-20 transition-transform duration-500"
           />
           <img
             src={Bloque}
             alt="Bloque en la escena"
-            className="w-[100px] h-[100px] absolute bottom-[23vh] left-[25vw] z-20"
+            className="w-[100px] h-[100px] absolute bottom-[23vh] left-[25vw] z-20 transition-transform duration-500"
           />
 
           <button
             tabIndex={0}
             aria-label="Regresar a niveles"
             className="absolute top-5 left-5 flex items-center justify-center bg-[#FFDD33] rounded-full p-3 shadow-normal cursor-pointer"
-            onClick={() => handleClicNivel(0)}
+            onClick={handleRegresar}
           >
             <IconRegresar width={20} height={20} className="cursor-pointer" color="black" />
           </button>
@@ -127,6 +142,13 @@ function Fuerza() {
           />
         </div>
       )}
+
+      {/* Confirmación Popup */}
+      <ConfirmacionPopup
+        mostrar={mostrarPopup}
+        onConfirmar={confirmarRegreso}
+        onCancelar={cancelarRegreso}
+      />
     </div>
   );
 }
