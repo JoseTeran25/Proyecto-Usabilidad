@@ -146,8 +146,8 @@ function MCU() {
                                     opcion={opcionSeleccionada}
                                     descripcion={
                                         opcionSeleccionada === "A" ? "5 m/s"
-                                            : opcionSeleccionada === "B" ? "10 m/s"
-                                                : opcionSeleccionada === "C" ? "2.5 m/s"
+                                            : opcionSeleccionada === "B" ? "2.5 m/s"
+                                                : opcionSeleccionada === "C" ? "10 m/s"
                                                     : "1 m/s"
                                     }
                                     color={respuestaCorrecta ? "bg-[#28A745]" : "bg-[#CA0303]"}
