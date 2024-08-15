@@ -64,14 +64,14 @@ function MRU() {
             alt="Fantasma persiguiendo personaje rojo"
             className={`w-[250px] h-[250px] absolute bottom-[23vh] left-[25vw] z-20 transition-transform duration-700 ${respuestaCorrecta !== null ? "transform translate-x-[-20vw]" : ""
               }`}
-            tabIndex="0"
+            tabIndex={0}
           />
           <img
             src={PersonajeRojo}
             alt="Personaje rojo deslizándose en la escena"
             className={`w-[250px] h-[250px] absolute bottom-[23vh] left-[45vw] z-20 transition-transform duration-700 ${respuestaCorrecta !== null ? "transform translate-x-[-20vw]" : ""
               }`}
-            tabIndex="0"
+            tabIndex={0}
           />
 
           <button
@@ -151,7 +151,7 @@ function MRU() {
                   esCorrecta={respuestaCorrecta}
                 />
                 <div
-                  tabIndex="0"
+                  tabIndex={0}
                   className={`rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl transition-transform duration-700 ${respuestaCorrecta !== null ? "transform translate-x-[20vw]" : ""
                     }`}
                   aria-live="polite"
@@ -161,7 +161,7 @@ function MRU() {
                     : "Lo siento, estuviste mal en esta ocasión y Agent 47 no logró escapar. Pero no te preocupes, aquí está la solución correcta: La distancia que recorrió Agent 47 fue: Distancia = Velocidad × Tiempo. Distancia = 5 m/s × 20 s = 100 metros. ¿Quiere volver a intentarlo?"}
                 </div>
                 <button
-                  role="button"
+                  
                   tabIndex={0}
                   aria-label={respuestaCorrecta ? "Pasar al siguiente nivel" : "Intentar nuevamente"}
                   className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5"

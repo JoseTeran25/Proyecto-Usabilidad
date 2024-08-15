@@ -2,11 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function IconHome({ width, height, className }) {
-  const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/");
-  };
 
   return (
     <svg
@@ -15,7 +11,6 @@ function IconHome({ width, height, className }) {
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={handleClick}
       className={className}
     >
       <path
