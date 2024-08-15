@@ -209,7 +209,7 @@ function MCU() {
                                     }
                                 </div>
                                 <button
-                                    role="button"
+                                    
                                     tabIndex={0}
                                     aria-label={respuestaCorrecta ? "Pasar al siguiente nivel" : "Intentar nuevamente"}
                                     className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5"

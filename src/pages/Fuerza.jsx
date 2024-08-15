@@ -100,7 +100,7 @@ function Fuerza() {
                   ¡Misión cumplida!
                 </div>
                 <button
-                  role="button"
+                  
                   tabIndex={0}
                   aria-label="Pasar al siguiente nivel"
                   className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5"
@@ -120,7 +120,7 @@ function Fuerza() {
                   Por favor, inténtalo de nuevo para completar la misión.
                 </div>
                 <button
-                  role="button"
+                  
                   tabIndex={0}
                   aria-label="Intentar nuevamente"
                   className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5"

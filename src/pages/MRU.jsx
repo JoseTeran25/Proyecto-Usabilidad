@@ -161,7 +161,7 @@ function MRU() {
                     : "Lo siento, estuviste mal en esta ocasión y Agent 47 no logró escapar. Pero no te preocupes, aquí está la solución correcta: La distancia que recorrió Agent 47 fue: Distancia = Velocidad × Tiempo. Distancia = 5 m/s × 20 s = 100 metros. ¿Quiere volver a intentarlo?"}
                 </div>
                 <button
-                  role="button"
+                  
                   tabIndex={0}
                   aria-label={respuestaCorrecta ? "Pasar al siguiente nivel" : "Intentar nuevamente"}
                   className="bg-[#FFDD33] p-3 rounded-lg font-aldrich text-2xl my-5"
