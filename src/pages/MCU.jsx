@@ -64,7 +64,7 @@ function MCU() {
                     <img
                         src={Dracula}
                         alt="Fondo de pasto en la parte inferior"
-                        className={`w-[250px] h-[250px] absolute bottom-[23vh] left-[25vw] z-20 transition-transform duration-700 ${respuestaCorrecta !== null ? "opacity-0 : opacity-100" : ""
+                        className={`w-[250px] h-[250px] absolute bottom-[23vh] left-[25vw] z-20 transition-transform duration-700 ${respuestaCorrecta !== null ? "display : hidden" : ""
                         }`}
                         tabIndex="0"
                     />
