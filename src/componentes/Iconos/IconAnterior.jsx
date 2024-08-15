@@ -9,7 +9,7 @@ function IconAnterior({ onClick, width, height }) {
       onClick={onClick}
       className="cursor-pointer"
       role="button"
-      aria-label="Icono para ir al tema siguiente"
+      aria-label="Icono para ir al tema anterior"
       tabIndex="0"
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
     >

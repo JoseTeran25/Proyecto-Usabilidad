@@ -94,7 +94,7 @@ function Fuerza() {
               <>
                 <p className="text-5xl font-bold mb-4" aria-live="polite">NIVEL 1</p>
                 <OpcionRespuesta opcion="A" descripcion="a = 5m/s²" color="bg-[#28A745]" />
-                <div className="rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl" aria-live="polite">
+                <div className="rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl" aria-live="polite" tabIndex={0}>
                   ¡Bien! Lograste una aceleración de 5 m/s². La Segunda Ley de Newton lo explica:
                   Fuerza neta = 50 N Masa = 10 kg Entonces, aceleración = 50 N / 10 kg = 5 m/s².
                   ¡Misión cumplida!
@@ -114,7 +114,7 @@ function Fuerza() {
               <>
                 <p className="text-5xl font-bold mb-4" aria-live="polite">NIVEL 1</p>
                 <OpcionRespuesta opcion="B" descripcion="a = 6m/s²" color="bg-[#CA0303]" />
-                <div className="rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl" aria-live="polite">
+                <div className="rounded-xl bg-[#D9D9D9] p-8 shadow-normal w-[800px] text-2xl" aria-live="polite" tabIndex={0}>
                   Incorrecto, Agent 47. Con una fuerza de 50 N sobre un bloque de 10 kg sin fricción, la aceleración correcta según la Segunda Ley de Newton es:
                   Fuerza neta = masa x aceleración 50 N = 10 kg x aceleración Aceleración = 5 m/s²
                   Por favor, inténtalo de nuevo para completar la misión.
