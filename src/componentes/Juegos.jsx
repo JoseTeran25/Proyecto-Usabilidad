@@ -43,7 +43,7 @@ function Juegos() {
 
   return (
     <div className="flex flex-col items-center justify-center p-4 z-20 relative h-screen" role="navigation" aria-labelledby="juegos-heading">
-      <h1 id="juegos-heading" className="text-4xl text-center font-bold pb-10" tabIndex="0" >Selecciona tu tema</h1>
+      <h1 id="juegos-heading" className="text-4xl text-center font-bold pb-10" tabIndex={0} >Selecciona tu tema</h1>
 
       <div className="flex items-center justify-center w-full gap-[100px] relative" aria-live="polite">
         <IconAnterior
@@ -66,10 +66,10 @@ function Juegos() {
             src={opciones[indice].imagen}
             alt={`Tema seleccionado: ${opciones[indice].nombre}`}
             className="w-[330px] h-[200px] rounded-xl shadow-xl"
-            tabIndex="0"
+            tabIndex={0}
             aria-label={`Tema seleccionado: ${opciones[indice].nombre}`}
           />
-          <h2 tabIndex="0" className="text-title2 mt-4 text-center">{opciones[indice].nombre}</h2>
+          <h2 tabIndex={0} className="text-title2 mt-4 text-center">{opciones[indice].nombre}</h2>
         </div>
 
         <img
